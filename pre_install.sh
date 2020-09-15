@@ -15,16 +15,16 @@ timedatectl set-ntp true
 #mount /dev/sda1 /mnt/boot
 # installing software
 pacstrap /mnt base base-devel linux-zen 
-pacstrap /mnt grub efibootmgr networkmanager pulseaudio  
+pacstrap /mnt grub efibootmgr networkmanager 
 pacstrap /mnt pulsemixer playerctl linux-firmware
-pacstrap /mnt git dialog kitty intel-ucode firefox stow 
-pacstrap /mnt bluez bluez-utils dialog mtools dosfstools
+pacstrap /mnt git dialog kitty intel-ucode stow 
+pacstrap /mnt bluez bluez-utils dialog mpv-mpris
 pacstrap /mnt zsh zsh-syntax-highlighting zsh-autosuggestions
-pacstrap /mnt bemenu-wlroots bemenu nvim android-file-transfer
-pacstrap /mnt gvfs-afc gvfs-mtp ffmpegthumbnailer nnn
-pacstrap /mnt lua mpv ttf-dejavu zathura python python-pip
+pacstrap /mnt nvim pulseaudio firefox zathura nnn
+pacstrap /mnt gvfs-afc gvfs-mtp ffmpegthumbnailer 
+pacstrap /mnt lua mpv ttf-dejavu python python-pip
 pacstrap /mnt powerline-fonts wl-clipboard youtube-dl
-pacstrap /mnt zathura-djvu zathura-pdf-poppler mako mpv-mpris
+pacstrap /mnt zathura-djvu zathura-pdf-poppler mako 
 # generating fs and chrooting
 genfstab -U /mnt >> /mnt/etc/fstab
 arch-chroot /mnt /bin/bash ./chroot_install.sh $USER $PASSWORD
